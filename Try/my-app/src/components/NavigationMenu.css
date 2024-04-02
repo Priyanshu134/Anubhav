@@ -1,0 +1,74 @@
+.navigation-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f56b21;
+    color: #fff;
+    padding: 15px 150px;
+    position: relative; /* Add position relative to the navigation menu */
+    padding-right: 10px;
+    
+}
+
+.menu-left,
+.menu-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-left li,
+.menu-right li {
+    margin-right: 20px;
+}
+
+.menu-left a,
+.menu-right a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-left a:hover,
+.menu-right a:hover {
+    color: #e91e63;
+}
+
+.settings-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.settings-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #e04826;
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.settings-icon:hover .settings-dropdown {
+    display: block;
+    max-height: 200px; /* Adjust max-height as needed */
+    overflow-y: auto;
+    right: 0;
+}
+
+.settings-dropdown li {
+    margin-bottom: 5px;
+}
+
+.settings-dropdown a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.settings-dropdown a:hover {
+    color: #e91e63;
+}
+
