@@ -15,7 +15,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           {/* <Route path='/' element={<LandingPage />} /> */}
-          <Route path='/home' element={ <HomePage />} />
+          <Route path='/home' element={<HomePage />} />
           {/* <Route path="*" element={<NotFoundPage />} /> */}
         </Routes>
       </BrowserRouter>

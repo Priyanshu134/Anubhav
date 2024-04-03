@@ -24,7 +24,6 @@ mongoose.connect(`mongodb+srv://dpriyanshu123456:dTBSyoYgt0W3hdTk@cluster0.aoz6r
 // Routes
 import userRouter from "./routes/register.js"
 app.use("/api/users", userRouter);
-app.use('/api/auth', authRoutes); // Use the imported authRoutes
 
 let messages = [];
 
