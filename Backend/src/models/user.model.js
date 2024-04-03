@@ -20,7 +20,7 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     dob: {
-        type: Number,
+        type: String,
         required: true,
     },
     age: {

@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const SignupForm = () => {
     const [formData, setFormData] = useState({
-        fullName: '',
+        firstName: '',
         email: '',
         phone: '',
         gender: 'male',
@@ -43,19 +43,6 @@ const SignupForm = () => {
         setConfirmPasswordVisible(!confirmPasswordVisible);
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (formData.password !== formData.confirmPassword) {
-            setPasswordMatchError('Passwords do not match');
-            return;
-        }
-        // Reset password match error if passwords match
-        setPasswordMatchError('');
-
-        // Add your form submission logic here
-        console.log(formData);
-    };
-
     const handleProfilePhotoClick = () => {
         setPhotoModalOpen(true); // Open photo modal
     };
@@ -73,34 +60,28 @@ const SignupForm = () => {
         setPhotoModalOpen(false);
     };
 
-    const handleRegister = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const { fullName, email, phone, gender, dob, city, password, employmentStatus, jobDescription } = formData;
-    
-        // Add your form submission logic here using the variables from formData
-        console.log(formData);
-    
-        // Example: Sending form data using Axios
+
+        // Check if passwords match
+        if (formData.password !== formData.confirmPassword) {
+            setPasswordMatchError('Passwords do not match');
+            return;
+        }
+
+        // If passwords match, reset any password match error and proceed with registration
+        setPasswordMatchError('');
         try {
-            const response = await axios.post('/your-api-endpoint', {
-                fullName,
-                email,
-                phone,
-                gender,
-                dob,
-                city,
-                password,
-                employmentStatus,
-                jobDescription,
-            });
-            console.log(response.data);
-            // Handle success response
+            const response = await axios.post('http://localhost:8000/api/users/register', formData);
+            console.log("Successfully registered", response.data);
+            // Handle success, maybe redirect user or clear form
         } catch (error) {
-            console.error('Error:', error);
-            // Handle error response
+            console.error('Registration Error:', error);
+            // Handle registration error, maybe display a message to the user
         }
     };
-    
+
+
 
     return (
         <div className="container">
@@ -119,8 +100,8 @@ const SignupForm = () => {
             <form onSubmit={handleSubmit}>
                 {/* Form fields */}
                 <div className="form-group">
-                    <label htmlFor="fullName">Full Name:</label>
-                    <input type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleChange} required />
+                    <label htmlFor="firstName">Full Name:</label>
+                    <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
                 </div>
                 {/* Add dropdown for employment status */}
                 <div className="form-group">
@@ -167,6 +148,10 @@ const SignupForm = () => {
                 <div className="form-group">
                     <label htmlFor="city">City:</label>
                     <input type="text" id="city" name="city" value={formData.city} onChange={handleChange} required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="age">Age:</label>
+                    <input type="text" id="age" name="age" value={formData.age} onChange={handleChange} required />
                 </div>
                 <div className="form-group">
                     <label htmlFor="password">Set Password:</label>

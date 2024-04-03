@@ -1,6 +1,6 @@
 import { asyncHandler } from '../utils/asyncHandler.js';
 import { ApiError } from "../utils/apiError.js";
-import { User } from "../models/user.model.js";
+import User from "../models/user.model.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 
 const registerUser = asyncHandler(async (req, res) => {
@@ -18,7 +18,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // if user alredy exist
     const existedUser = await User.findOne({
-        $or: [{ phone }, { email }]
+        $and: [{ phone }, { email }]
     });
     if (existedUser) throw new ApiError(409, "User already exists");
 
