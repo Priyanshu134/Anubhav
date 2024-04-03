@@ -10,15 +10,15 @@ import Footer from '../components/Footer.jsx'
 function HomePage() {
   return (
     <>
-    <NavigationMenu />
-    {/* <Chat /> */}
-    {/* <LoginForm /> */}
-    {/* <Jobcard /> */}
-    <SignupForm />
-    <SearchBar />
-    <PopularJobsSection />
-    <ReviewSection />
-    <Footer />
+      {/* <NavigationMenu /> */}
+      {/* <Chat /> */}
+      {/* <LoginForm /> */}
+      {/* <Jobcard /> */}
+      <SignupForm />
+      <SearchBar />
+      <PopularJobsSection />
+      <ReviewSection />
+      <Footer />
     </>
   );
 }
