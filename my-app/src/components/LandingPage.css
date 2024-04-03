@@ -1,0 +1,121 @@
+/* LandingPage.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a; /* Dark background color */
+    color: #fff; /* Text color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styles */
+  .landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Heading styles */
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff; /* Change color of "Welcome to Anubhav" */
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  /* Sign-in section styles */
+  .sign-in-section {
+    background-color: #333; /* Dark background color for sign-in section */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Adjust width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+    text-align: center;
+  }
+  
+  /* Sign-up section styles */
+  .sign-up-section {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #ccc; /* Text color for the "Don't have an account?" text */
+    display: flex;
+    align-items: center;
+  }
+  
+  .sign-up-section a {
+    color: #fff; /* Link color for the "Sign Up" link */
+    font-weight: bold;
+    margin-left: 5px; /* Add some space between the text and the link */
+    transition: color 0.3s ease;
+  }
+  
+  .sign-up-section a:hover {
+    color: #007bff; /* Hover color for the "Sign Up" link */
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  /* Link styles */
+  a {
+    color: #f8f8f8; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #ccc; /* Hover color */
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Hover background color */
+  }
+  
+  /* Google button styles */
+  .google-btn {
+    background-color: #dd4b39; /* Google button background color */
+  }
+  
+  .google-btn:hover {
+    background-color: #c53727; /* Google button hover background color */
+  }
+  
+  /* Input styles */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #888;
+  }
+  
+  /* Center align text */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .sign-in-section {
+      width: 80%; /* Adjust width for smaller screens */
+    }
+  }
+  

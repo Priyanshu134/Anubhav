@@ -10,7 +10,7 @@ import Footer from '../components/Footer.jsx'
 function HomePage() {
   return (
     <>
-      {/* <NavigationMenu /> */}
+      <NavigationMenu />
       {/* <Chat /> */}
       {/* <LoginForm /> */}
       {/* <Jobcard /> */}
