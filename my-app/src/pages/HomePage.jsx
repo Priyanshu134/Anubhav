@@ -14,7 +14,7 @@ function HomePage() {
       {/* <Chat /> */}
       {/* <LoginForm /> */}
       {/* <Jobcard /> */}
-      <SignupForm />
+      {/* <SignupForm /> */}
       <SearchBar />
       <PopularJobsSection />
       <ReviewSection />

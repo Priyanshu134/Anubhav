@@ -64,7 +64,7 @@ const SearchBar = () => {
         className="search-input"
       />
       <div className="location-container" ref={inputRef}>
-        <i className="fas fa-search location-icon"></i>
+        {/* <i className="fas fa-search location-icon"></i> */}
         <input
           type="text"
           placeholder="Enter location"
