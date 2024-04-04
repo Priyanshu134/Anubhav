@@ -1,15 +1,9 @@
-import express from 'express';
-import User from '../models/user.model.js';
+import { Router } from "express";
+import { registerUser, loginUser } from "../controllers/user.controller.js";
 
-const router = express.Router();
 
-// Define your routes here
-router.post('/register', async (req, res) => {
-    // Handle user registration
-});
-
-router.post('/login', async (req, res) => {
-    // Handle user login
-});
+const router = Router();
+router.route('/register').post(registerUser);
+router.route('/login').post(loginUser);
 
 export default router;
