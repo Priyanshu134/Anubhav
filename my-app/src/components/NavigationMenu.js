@@ -9,7 +9,7 @@ const NavigationMenu = () => {
         <nav className="navigation-menu">
             {/* Left section */}
             <ul className="menu-left">
-                <li><Link to="/">Home</Link></li>
+                <li><Link to="/home">Home</Link></li>
                 <li><Link to="/jobs">Jobs</Link></li>
                 {/* <li><a href="#">Recruiters</a></li> */}
                 {/* <li><a href="#">Companies</a></li> */}
