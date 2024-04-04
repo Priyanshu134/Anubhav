@@ -22,7 +22,7 @@ mongoose.connect(`mongodb+srv://dpriyanshu123456:dTBSyoYgt0W3hdTk@cluster0.aoz6r
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Routes
-import userRouter from "./routes/register.js"
+import userRouter from "./routes/auth.js"
 app.use("/api/users", userRouter);
 
 let messages = [];

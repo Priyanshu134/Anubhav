@@ -1,15 +1,12 @@
-import express from 'express';
-import User from '../models/user.model.js';
+import { Router } from "express";
+import { registerUser, loginUser, logoutUser } from "../controllers/user.controller.js";
+import { verifyJWT } from "../middlewares/auth.middleware.js"
 
-const router = express.Router();
+const router = Router();
+router.route('/register').post(registerUser);
+router.route('/login').post(loginUser);
 
-// Define your routes here
-router.post('/register', async (req, res) => {
-    // Handle user registration
-});
-
-router.post('/login', async (req, res) => {
-    // Handle user login
-});
+// protected routes
+router.route("/logout").post(verifyJWT, logoutUser);
 
 export default router;
