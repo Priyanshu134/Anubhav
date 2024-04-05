@@ -1,22 +1,22 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-import authRoutes from './routes/auth.js'; // Update the import path
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
+import authRoutes from './routes/auth.js';
+import profileRoutes from './routes/profile.js';
 import credentials from './middlewares/credentials.js';
 import corsOptions from './config/corsOptions.js';
-import cookieParser from 'cookie-Parser';
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-
 // Middlewares
 app.use(express.json());
-app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));
@@ -28,10 +28,8 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Routes
-import userRouter from "./routes/auth.js"
-import profileRouter from "./routes/profile.js"
-app.use("/api/users", userRouter);
-app.use("/api/profile", profileRouter);
+app.use("/api/auth", authRoutes);
+app.use("/api/profile", profileRoutes);
 
 let messages = [];
 
