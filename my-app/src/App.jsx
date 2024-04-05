@@ -6,7 +6,7 @@ import ProfilePage from './components/ProfilePage';
 import LandingPage from './components/LandingPage';
 import SignUpPage from './components/SignUpPage';
 // import LoginForm from './components/LoginForm';
-import { AuthProvider } from './home.privacy/AuthContext';
+// import { AuthProvider } from './home.privacy/AuthContext';
 import PrivateRoute from './home.privacy/PrivateRoute';
 
 // Define your routes
