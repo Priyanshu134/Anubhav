@@ -4,6 +4,9 @@ import mongoose from 'mongoose';
 import authRoutes from './routes/auth.js'; // Update the import path
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import credentials from './middlewares/credentials.js';
+import corsOptions from './config/corsOptions.js';
+import cookieParser from 'cookie-Parser';
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
@@ -15,15 +18,20 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(cors(corsOptions));
+app.use(credentials);
 
 // Connect to MongoDB
-mongoose.connect(`mongodb+srv://dpriyanshu123456:dTBSyoYgt0W3hdTk@cluster0.aoz6ri5.mongodb.net`, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Routes
 import userRouter from "./routes/auth.js"
+import profileRouter from "./routes/profile.js"
 app.use("/api/users", userRouter);
+app.use("/api/profile", profileRouter);
 
 let messages = [];
 
