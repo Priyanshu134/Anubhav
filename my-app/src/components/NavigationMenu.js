@@ -1,28 +1,37 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import './NavigationMenu.css';
 
 const NavigationMenu = () => {
-    const [location, setLocation] = useState('');
-    const [showSuggestions, setShowSuggestions] = useState(false);
-    const locations = ['Bangalore', 'Hyderabad', 'Gurgaon', 'Mumbai', 'Chennai', 'Pune', 'Delhi', 'Kolkata'];
+    const [searchQuery, setSearchQuery] = useState('');
 
-    const handleLocationChange = (e) => {
-        const value = e.target.value;
-        setLocation(value);
-        setShowSuggestions(value.trim() !== '');
-    };
-
-    const handleLocationClick = (value) => {
-        setLocation(value);
-        setShowSuggestions(false);
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
     };
 
     const handleSearch = () => {
-        // Handle search action here
-        console.log('Searching for:', location);
+        const formattedQuery = searchQuery.trim().toLowerCase();
+        switch (formattedQuery) {
+            case 'business analyst':
+                window.location.href = '/JobcardsPageBA';
+                break;
+            case 'software engineer':
+                window.location.href = '/JobcardsPageSE';
+                break;
+            case 'social media manager':
+                window.location.href = '/JobcardsPageSMM';
+                break;
+            case 'music composer':
+                window.location.href = '/JobcardsPageMC';
+                break;
+            case 'cinematography creative':
+                window.location.href = '/JobcardsPageCC';
+                break;
+            default:
+                // Handle other search actions here
+                console.log('Searching for:', searchQuery);
+                break;
+        }
     };
 
     return (
@@ -35,30 +44,18 @@ const NavigationMenu = () => {
                 <input
                     type="text"
                     placeholder="Search jobs"
-                    value={location}
-                    onChange={handleLocationChange}
+                    value={searchQuery}
+                    onChange={handleSearchChange}
                     className="search-input"
                 />
-                {showSuggestions && (
-                    <ul className="suggestions-list">
-                        {locations.map((loc, index) => (
-                            <li key={index} onClick={() => handleLocationClick(loc)}>
-                                <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" />
-                                {loc}
-                            </li>
-                        ))}
-                    </ul>
-                )}
                 <button className="search-button" onClick={handleSearch}>Search</button>
             </div>
             <ul className="menu-right">
-                <li className="settings-icon">
-                    <FontAwesomeIcon icon={faCog} />
-                    <ul className="settings-dropdown">
-                        <li><a href="#">Settings</a></li>
-                        <li><Link to="/profile">Profile</Link></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
+                <li>
+                    <Link to="/profile">Profile</Link>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
                 </li>
             </ul>
         </nav>
@@ -66,5 +63,9 @@ const NavigationMenu = () => {
 }
 
 export default NavigationMenu;
+
+
+
+
 
 
