@@ -30,8 +30,10 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 // Routes
 import userRouter from "./routes/auth.js"
 import profileRouter from "./routes/profile.js"
+import requestRouter from "./routes/request.js";
 app.use("/api/users", userRouter);
 app.use("/api/profile", profileRouter);
+app.use("/api/request", requestRouter);
 
 let messages = [];
 
