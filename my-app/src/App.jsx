@@ -6,27 +6,25 @@ import ProfilePage from './components/ProfilePage';
 import LandingPage from './components/LandingPage';
 import SignUpPage from './components/SignUpPage';
 // import LoginForm from './components/LoginForm';
-
+import { AuthProvider } from './home.privacy/AuthContext';
+import PrivateRoute from './home.privacy/PrivateRoute';
 
 // Define your routes
 const App = () => {
-  // const token = useSelector(selectToken);
-  // const verify = useVerify();
-
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          {/* <Route path='/' element={<LandingPage />} /> */}
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/profile' element={<ProfilePage />} />
-          <Route path='/home' element={<HomePage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          {/* <Route path="*" element={<NotFoundPage />} /> */}
-        </Routes>
-      </BrowserRouter>
-    </>
+      <AuthProvider>
+          <BrowserRouter>
+              <Routes>
+                  <Route path='/' element={<LandingPage />} />
+                  <Route path='/home' element={<HomePage />} />
+                  <Route path='/profile' element={<ProfilePage />} />
+                  {/* <PrivateRoute path="/home" element={<HomePage />} /> */}
+                  {/* <Route path='/home' element={<PrivateRoute/>}>
+                    <Route path='/home' element={<LandingPage/>}/>
+                      </Route> */}
+                  <Route path="/signup" element={<SignUpPage />} />
+              </Routes>
+          </BrowserRouter>
+      </AuthProvider>
   );
 };
-
-export default App;

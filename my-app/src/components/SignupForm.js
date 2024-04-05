@@ -3,6 +3,8 @@ import './SignupForm.css';
 import dummyProfilePic from './dummy-profile-pic.png'; // Import dummy profile picture
 import axios from 'axios';
 
+
+
 const SignupForm = () => {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -34,6 +36,7 @@ const SignupForm = () => {
             setFormData({ ...formData, [name]: value });
         }
     };
+  
 
     const handleShowPassword = () => {
         setPasswordVisible(!passwordVisible);
