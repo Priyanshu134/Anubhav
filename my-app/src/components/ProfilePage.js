@@ -1,113 +1,44 @@
-// import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
-
-// const ProfilePage = () => {
-//   const [userData, setUserData] = useState({});
-//   const [editMode, setEditMode] = useState(false);
-//   const [formData, setFormData] = useState({});
-
-//   useEffect(() => {
-//     axios.get('http://localhost:8000/api/profile')
-//       .then(response => {
-//         setUserData(response.data);
-//         setFormData(response.data);
-//       })
-//       .catch(error => console.error('Error fetching user data:', error));
-//   }, []);
-
-//   const handleInputChange = (e) => {
-//     setFormData({ ...formData, [e.target.name]: e.target.value });
-//   };
-
-//   const handleEditProfile = () => {
-//     setEditMode(true);
-//   };
-
-//   const handleSaveProfile = () => {
-//     axios.put('http://localhost:8000/api/profile/update', formData)
-//       .then(response => {
-//         setUserData(response.data);
-//         setEditMode(false);
-//       })
-//       .catch(error => console.error(error));
-//   };
-
-//   return (
-//     <div>
-//       {editMode ? (
-//         <form>
-//           <label>First Name:</label>
-//           <input type="text" name="firstName" value={formData.firstName} onChange={handleInputChange} />
-//           {/* Other input fields for user data */}
-//           <button type="button" onClick={handleSaveProfile}>Save</button>
-//         </form>
-//       ) : (
-//         <div>
-//           <p>First Name: {userData.firstName}</p>
-//           {/* Display other user data */}
-//           <button type="button" onClick={handleEditProfile}>Edit Profile</button>
-//         </div>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default ProfilePage;
-
-
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import ProfileInfo from './ProfileInfo.js';
+import EditProfileForm from './EditProfileForm.js';
+import styles from './ProfilePage.module.css'; // Import CSS module
 
 const ProfilePage = () => {
-  const [userData, setUserData] = useState({});
-  const [error, setError] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [userData, setUserData] = useState({
+    fullName: 'John Doe',
+    email: 'johndoe@example.com',
+    phone: '123-456-7890',
+    jobDescription: 'Software Developer',
+    dob: '1990-01-01',
+    city: 'New York',
+    password: 'examplepassword',
+    photoUrl: 'https://via.placeholder.com/150', // Placeholder image URL
+  });
 
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const token = getTokenFromCookie();
-        console.log('Token:', token); // Log token value
-        const response = await axios.get('http://localhost:8000/api/profile', {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        });
-        setUserData(response.data);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-        setError(error);
-      }
-    };
-
-    fetchUserData();
-  }, []);
-
-  const getTokenFromCookie = () => {
-    const cookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('accessToken='));
-    if (cookie) {
-      return cookie.split('=')[1];
-    } else {
-      return null;
-    }
+  const handleEditClick = () => {
+    setIsEditing(true);
   };
 
-  if (error) {
-    return <div>Error fetching user data: {error.message}</div>;
-  }
+  const handleCancelEdit = () => {
+    setIsEditing(false);
+  };
+
+  const handleSubmitEdit = (updatedUserData) => {
+    setUserData(updatedUserData);
+    setIsEditing(false);
+  };
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">User Profile</h5>
-        <p className="card-text">First Name: {userData.firstName}</p>
-        {/* <p className="card-text">Last Name: {userData.lastName}</p> */}
-        {/* Display other user data as needed */}
-      </div>
+    <div className={styles.container}>
+      <h1 className={styles.title}>Profile</h1>
+      {isEditing ? (
+        <EditProfileForm userData={userData} onCancelEdit={handleCancelEdit} onSubmitEdit={handleSubmitEdit} />
+      ) : (
+        <ProfileInfo userData={userData} onEditClick={handleEditClick} />
+      )}
     </div>
   );
 };
 
 export default ProfilePage;
-
-
-
