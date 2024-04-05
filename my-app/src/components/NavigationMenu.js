@@ -1,27 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './NavigationMenu.css'; // Import your CSS file for styling
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import './NavigationMenu.css';
 
 const NavigationMenu = () => {
+    const [location, setLocation] = useState('');
+    const [showSuggestions, setShowSuggestions] = useState(false);
+    const locations = ['Bangalore', 'Hyderabad', 'Gurgaon', 'Mumbai', 'Chennai', 'Pune', 'Delhi', 'Kolkata'];
+
+    const handleLocationChange = (e) => {
+        const value = e.target.value;
+        setLocation(value);
+        setShowSuggestions(value.trim() !== '');
+    };
+
+    const handleLocationClick = (value) => {
+        setLocation(value);
+        setShowSuggestions(false);
+    };
+
+    const handleSearch = () => {
+        // Handle search action here
+        console.log('Searching for:', location);
+    };
+
     return (
         <nav className="navigation-menu">
-            {/* Left section */}
             <ul className="menu-left">
                 <li><Link to="/home">Home</Link></li>
                 <li><Link to="/jobs">Jobs</Link></li>
-                {/* <li><a href="#">Recruiters</a></li> */}
-                {/* <li><a href="#">Companies</a></li> */}
-                {/* Add more links as needed */}
             </ul>
-            {/* Right section */}
+            <div className="search-bar-container">
+                <input
+                    type="text"
+                    placeholder="Search jobs"
+                    value={location}
+                    onChange={handleLocationChange}
+                    className="search-input"
+                />
+                {showSuggestions && (
+                    <ul className="suggestions-list">
+                        {locations.map((loc, index) => (
+                            <li key={index} onClick={() => handleLocationClick(loc)}>
+                                <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" />
+                                {loc}
+                            </li>
+                        ))}
+                    </ul>
+                )}
+                <button className="search-button" onClick={handleSearch}>Search</button>
+            </div>
             <ul className="menu-right">
                 <li className="settings-icon">
                     <FontAwesomeIcon icon={faCog} />
                     <ul className="settings-dropdown">
                         <li><a href="#">Settings</a></li>
-                        <li><Link to="/profile">Profile</Link></li> {/* Link to ProfilePage */}
+                        <li><Link to="/profile">Profile</Link></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </li>
@@ -31,8 +66,5 @@ const NavigationMenu = () => {
 }
 
 export default NavigationMenu;
-
-
-
 
 
