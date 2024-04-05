@@ -13,18 +13,20 @@ import SignUpPage from './components/SignUpPage';
 const App = () => {
   return (
     //   <AuthProvider>
-          <BrowserRouter>
-              <Routes>
-                  <Route path='/' element={<LandingPage />} />
-                  <Route path='/home' element={<HomePage />} />
-                  <Route path='/profile' element={<ProfilePage />} />
-                  {/* <PrivateRoute path="/home" element={<HomePage />} /> */}
-                  {/* <Route path='/home' element={<PrivateRoute/>}>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LandingPage />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/profile' element={<ProfilePage />} />
+        {/* <PrivateRoute path="/home" element={<HomePage />} /> */}
+        {/* <Route path='/home' element={<PrivateRoute/>}>
                     <Route path='/home' element={<LandingPage/>}/>
                       </Route> */}
-                  <Route path="/signup" element={<SignUpPage />} />
-              </Routes>
-          </BrowserRouter>
+        <Route path="/signup" element={<SignUpPage />} />
+      </Routes>
+    </BrowserRouter>
     //   {/* </AuthProvider> */}
   );
 };
+
+export default App;
