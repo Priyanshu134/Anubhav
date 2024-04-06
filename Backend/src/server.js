@@ -28,8 +28,12 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
   .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/profile", profileRoutes);
+import userRouter from "./routes/auth.js"
+import profileRouter from "./routes/profile.js"
+import requestRouter from "./routes/request.js";
+app.use("/api/users", userRouter);
+app.use("/api/profile", profileRouter);
+app.use("/api/request", requestRouter);
 
 let messages = [];
 
