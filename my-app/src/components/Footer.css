@@ -1,5 +1,5 @@
 .footer {
-  background-color: #333;
+  background-color: #ffffff;
   color: #000; /* Changed text color to black */
   padding: 50px 0;
 }
@@ -21,6 +21,7 @@
 .social-icons {
   flex: 1;
   margin-bottom: 30px;
+  padding-left: 100px;
 }
 
 .contact-info h3,
@@ -36,6 +37,7 @@ ul {
 
 ul li {
   margin-bottom: 10px;
+  
 }
 
 a {
@@ -50,6 +52,7 @@ a {
 .social-link {
   display: flex;
   align-items: center;
+  padding-bottom: 10px;
 }
 
 .social-link img {

@@ -23,6 +23,11 @@
     font-weight: bold;
     margin-bottom: 10px;
 }
+.jobcard-job_profile {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
 .jobcard-info {
     font-size: 16px;

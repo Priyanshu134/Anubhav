@@ -1,0 +1,35 @@
+.box-container {
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+  }
+  
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .text {
+    flex: 1;
+  }
+  
+  .heading {
+    font-size: 50px;
+    font-family: 'Arial', sans-serif; /* Change font family */
+    color: black; /* Set color to black */
+    align-items: center;
+  }
+  
+  .explanation {
+    font-size: 16px;
+  }
+  
+  .image {
+    width: 40%; /* Adjust the width of the image container */
+  }
+  
+  .image img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }

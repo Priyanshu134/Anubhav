@@ -1,0 +1,6 @@
+.anu {
+    color: rgb(0, 0, 0); /* Change text color to red */
+    margin-top: 170px;
+    z-index: 2;
+    /* outline: 1px dotted red; Add a 1px dotted red outline */
+}

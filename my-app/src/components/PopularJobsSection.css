@@ -4,8 +4,13 @@
     height: 400px;
     overflow: hidden;
     font-size: 40px;
-    top: -100px;
+    top: -250px;
+
+    
 }
+/* .image-container{
+    left: 500px;
+} */
 .centered{
     /* display: flex; */
     text-align: center;

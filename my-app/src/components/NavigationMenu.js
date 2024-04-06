@@ -1,29 +1,64 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import './NavigationMenu.css'; // Import your CSS file for styling
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './NavigationMenu.css';
 
 const NavigationMenu = () => {
+    const [searchQuery, setSearchQuery] = useState('');
+
+    const handleSearchChange = (e) => {
+        setSearchQuery(e.target.value);
+    };
+
+    const handleSearch = () => {
+        const formattedQuery = searchQuery.trim().toLowerCase();
+        switch (formattedQuery) {
+            case 'charted accountant':
+                window.location.href = '/JobcardsPageCA';
+                break;
+            case 'business analyst':
+                window.location.href = '/JobcardsPageBA';
+                break;
+            case 'software engineer':
+                window.location.href = '/JobcardsPageSE';
+                break;
+            case 'social media manager':
+                window.location.href = '/JobcardsPageSMM';
+                break;
+            case 'music composer':
+                window.location.href = '/JobcardsPageMC';
+                break;
+            case 'cinematography creative':
+                window.location.href = '/JobcardsPageCC';
+                break;
+            default:
+                // Handle other search actions here
+                console.log('Searching for:', searchQuery);
+                break;
+        }
+    };
+
     return (
         <nav className="navigation-menu">
-            {/* Left section */}
             <ul className="menu-left">
                 <li><Link to="/home">Home</Link></li>
-                <li><Link to="/jobs">Jobs</Link></li>
-                {/* <li><a href="#">Recruiters</a></li> */}
-                {/* <li><a href="#">Companies</a></li> */}
-                {/* Add more links as needed */}
+                <li><Link to="/aboutus">About Us</Link></li>
             </ul>
-            {/* Right section */}
+            <div className="search-bar-container">
+                <input
+                    type="text"
+                    placeholder="Search jobs"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="search-input"
+                />
+                <button className="search-button" onClick={handleSearch}>Search</button>
+            </div>
             <ul className="menu-right">
-                <li className="settings-icon">
-                    <FontAwesomeIcon icon={faCog} />
-                    <ul className="settings-dropdown">
-                        <li><a href="#">Settings</a></li>
-                        <li><Link to="/profile">Profile</Link></li> {/* Link to ProfilePage */}
-                        <li><a href="#">Logout</a></li>
-                    </ul>
+                <li>
+                    <Link to="/profile">Profile</Link>
+                </li>
+                <li>
+                    <a href="#">Logout</a>
                 </li>
             </ul>
         </nav>
@@ -31,6 +66,7 @@ const NavigationMenu = () => {
 }
 
 export default NavigationMenu;
+
 
 
 

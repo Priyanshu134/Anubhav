@@ -1,22 +1,22 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-import authRoutes from './routes/auth.js'; // Update the import path
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
+import authRoutes from './routes/auth.js';
+import profileRoutes from './routes/profile.js';
 import credentials from './middlewares/credentials.js';
 import corsOptions from './config/corsOptions.js';
-import cookieParser from 'cookie-Parser';
 
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const app = express();
 
-
 // Middlewares
 app.use(express.json());
-app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(cors(corsOptions));

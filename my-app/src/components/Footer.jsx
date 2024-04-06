@@ -1,9 +1,11 @@
 import React from 'react';
 import './Footer.css'; // Importing CSS file for stylings
-import youtubeicon from './youtube.jpeg';
-import instagramlogo from './instagram.jpeg'
-import facebooklogo from './facebook.jpeg'
-import linkedinlogo from './linkedin.jpeg'
+import { Link } from 'react-router-dom';
+
+import Xlogo from './twitter.png';
+import instagramlogo from './instagram.png'
+import facebooklogo from './facebook.png'
+import linkedinlogo from './linkedin.png'
 
 const Footer = () => {
     return (
@@ -19,37 +21,38 @@ const Footer = () => {
             <div className="footer-links">
               <h3>Quick Links</h3>
               <ul>
-                <li><a href="/privacy-policy">Privacy Policy</a></li>
-                <li><a href="/terms-of-use">Terms of Use</a></li>
-                <li><a href="/sitemap">Sitemap</a></li>
-                <li><a href="/help">Help</a></li>
+                <li><Link to="/privacypolicy">Privacy Policy</Link></li>
+                <li><Link to="/termsofuse">Terms Of Use</Link></li>
+                <li><Link to="/fraudalert">Fraud Alert</Link></li>
+                <li><Link to="/helpsection">Help Section</Link></li>
               </ul>
             </div>
             <div className="social-icons">
               <h3>Follow Us</h3>
               <div className="icons">
                 <div className="social-link">
-                  <a href="https://www.youtube.com">
-                    <img src={youtubeicon} alt="YouTube" />
-                    <span>YouTube</span>
+                  <a href="https://twitter.com/?lang=en">
+                  
+                    <img src={Xlogo} alt="X" />
+                    <span></span>
                   </a>
                 </div>
                 <div className="social-link">
                   <a href="https://www.instagram.com">
                     <img src={instagramlogo} alt="Instagram" />
-                    <span>Instagram</span>
+                    
                   </a>
                 </div>
                 <div className="social-link">
                   <a href="https://www.linkedin.com">
                     <img src={linkedinlogo} alt="LinkedIn" />
-                    <span>LinkedIn</span>
+                    <span></span>
                   </a>
                 </div>
                 <div className="social-link">
                   <a href="https://www.facebook.com">
                     <img src={facebooklogo} alt="Facebook" />
-                    <span>Facebook</span>
+                    <span></span>
                   </a>
                 </div>
               </div>

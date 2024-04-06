@@ -1,0 +1,43 @@
+.help-section {
+    padding: 20px;
+  }
+  
+  .help-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold; /* Make the heading bold */
+  }
+  
+  .faq-heading,
+  .troubleshooting-heading {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline; /* Add underline */
+  }
+  
+  .faq-item,
+  .troubleshooting-item {
+    margin-bottom: 20px;
+    margin-left: 20px; /* Added indentation */
+  }
+  
+  .faq-question,
+  .troubleshooting-subheading {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .faq-answer,
+  .troubleshooting-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .troubleshooting-list {
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+  }
+  
+  .troubleshooting-item {
+    margin-bottom: 20px;
+  }
