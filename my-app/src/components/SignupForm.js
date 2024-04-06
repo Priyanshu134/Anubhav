@@ -36,7 +36,7 @@ const SignupForm = () => {
             setFormData({ ...formData, [name]: value });
         }
     };
-  
+
 
     const handleShowPassword = () => {
         setPasswordVisible(!passwordVisible);
@@ -77,6 +77,7 @@ const SignupForm = () => {
         try {
             const response = await axios.post('http://localhost:8000/api/users/register', formData);
             console.log("Successfully registered", response.data);
+            window.location.href = '/home';
             // Handle success, maybe redirect user or clear form
         } catch (error) {
             console.error('Registration Error:', error);
