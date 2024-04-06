@@ -9,11 +9,12 @@ import JobProfileBox from '../components/JobProfileBox.js';
 
 import Footer from '../components/Footer.jsx'
 // import BoxComponent from '../components/box.js';
+import Anubhav from '../components/anubhav.js';
 function HomePage() {
   return (
     <>
       <NavigationMenu />
-      
+      <Anubhav />
       
       {/* <JobcardsPageCA /> */}
       {/* <Chat /> */}

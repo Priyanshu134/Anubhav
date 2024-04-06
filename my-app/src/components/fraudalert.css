@@ -1,0 +1,28 @@
+.fraud-alert {
+    background-color: #f8f8f8;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .fraud-alert-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .fraud-alert-content {
+    font-size: 16px;
+  }
+  
+  .fraud-alert-text {
+    margin-bottom: 10px;
+  }
+  
+  .fraud-alert-list {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .fraud-alert-item {
+    margin-bottom: 10px;
+  }

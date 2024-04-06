@@ -1,6 +1,3 @@
-// ReviewSection.js
-import axios from 'axios';
-
 import React, { useState, useRef, useEffect } from 'react';
 import './ReviewSection.css'; // Import the CSS file for styling
 
@@ -28,107 +25,91 @@ const ReviewSection = () => {
   return (
     <div className={`review-section ${isActive ? 'active' : ''}`} onClick={toggleAnimation}>
       <div className="review-container" ref={reviewContainerRef}>
-        {/* Demo reviews */}
+        {/* Genuine dream job experiences */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">John Doe</span>
-            <span className="rating">Rating: 5/5</span>
-          </div>
-          <p className="comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-        {/* Add more demo reviews here */}
-        {/* Review 25 */}
-        <div className="review-card">
-          <div className="review-header">
-            <span className="author">Emily Wilson</span>
-            <span className="rating">Rating: 4/5</span>
-          </div>
-          <p className="comment">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        {/* Add more demo reviews here */}
-        {/* Review 26 */}
-        <div className="review-card">
-          <div className="review-header">
-            <span className="author">Jessica Brown</span>
-            <span className="rating">Rating: 3.5/5</span>
-          </div>
-          <p className="comment">Nulla vitae elit libero, a pharetra augue.</p>
-        </div>
-        {/* Review 27 */}
-        <div className="review-card">
-          <div className="review-header">
-            <span className="author">David Wilson</span>
-            <span className="rating">Rating: 4/5</span>
-          </div>
-          <p className="comment">Aenean lacinia bibendum nulla sed consectetur.</p>
-        </div>
-        {/* Add more demo reviews here */}
-        {/* Review 28 */}
-        <div className="review-card">
-          <div className="review-header">
-            <span className="author">Sarah Lee</span>
+            <span className="author">Rajesh Kumar</span>
             <span className="rating">Rating: 4.5/5</span>
           </div>
-          <p className="comment">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+          <p className="comment">"Working as a software engineer has been a dream come true. Every day, I get to solve challenging problems and collaborate with talented colleagues."</p>
         </div>
-        {/* Review 29 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Mike Brown</span>
+            <span className="author">Anjali Sharma</span>
             <span className="rating">Rating: 4/5</span>
           </div>
-          <p className="comment">Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+          <p className="comment">"Being a travel blogger allows me to explore the world and share my experiences with others. It's incredibly fulfilling to turn my passion into a career."</p>
         </div>
-        {/* Add more demo reviews here */}
-        {/* Review 30 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Alex Johnson</span>
+            <span className="author">Amit Patel</span>
             <span className="rating">Rating: 3.5/5</span>
           </div>
-          <p className="comment">Vestibulum id ligula porta felis euismod semper.</p>
+          <p className="comment">"Working in the film industry has its challenges, but seeing my ideas come to life on the big screen makes it all worth it. I love every moment of it."</p>
         </div>
-        {/* Review 31 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Jennifer Taylor</span>
-            <span className="rating">Rating: 4/5</span>
+            <span className="author">Deepika Singh</span>
+            <span className="rating">Rating: 4.8/5</span>
           </div>
-          <p className="comment">Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+          <p className="comment">"As a wildlife photographer, I get to capture the beauty of nature and raise awareness about conservation. It's a privilege to do what I love for a living."</p>
         </div>
-        {/* Add more demo reviews here */}
-        {/* Review 32 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Chris Evans</span>
-            <span className="rating">Rating: 5/5</span>
+            <span className="author">Vivek Gupta</span>
+            <span className="rating">Rating: 4.2/5</span>
           </div>
-          <p className="comment">Donec sed odio dui.</p>
+          <p className="comment">"Working as a chef in a Michelin-starred restaurant has been my dream since I was a child. The creativity and precision required in the kitchen keep me motivated every day."</p>
         </div>
-        {/* Review 33 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Emily Wilson</span>
-            <span className="rating">Rating: 4/5</span>
+            <span className="author">Neha Verma</span>
+            <span className="rating">Rating: 4.6/5</span>
           </div>
-          <p className="comment">Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+          <p className="comment">"As a fashion designer, I have the opportunity to express my creativity and bring my visions to life through clothing. It's a dream job that allows me to constantly innovate and inspire."</p>
         </div>
-        {/* Add more demo reviews here */}
-        {/* Review 34 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">John Doe</span>
-            <span className="rating">Rating: 4.5/5</span>
+            <span className="author">Rahul Sharma</span>
+            <span className="rating">Rating: 4.3/5</span>
           </div>
-          <p className="comment">Vestibulum id ligula porta felis euismod semper.</p>
+          <p className="comment">"Working in the aerospace industry has always been my dream. The thrill of contributing to space exploration and pushing the boundaries of technology is unparalleled."</p>
         </div>
-        {/* Review 35 */}
         <div className="review-card">
           <div className="review-header">
-            <span className="author">Jane Smith</span>
-            <span className="rating">Rating: 4/5</span>
+            <span className="author">Priya Singh</span>
+            <span className="rating">Rating: 4.7/5</span>
           </div>
-          <p className="comment">Sed posuere consectetur est at lobortis.</p>
+          <p className="comment">"Being a professional athlete is more than just a job - it's a lifelong dream. The dedication and hard work required are challenging, but the feeling of accomplishment is unmatched."</p>
+        </div>
+        <div className="review-card">
+          <div className="review-header">
+            <span className="author">Manoj Kumar</span>
+            <span className="rating">Rating: 4.1/5</span>
+          </div>
+          <p className="comment">"Working as a marine biologist allows me to explore the ocean and study its wonders. It's a dream job that combines my passion for science and nature."</p>
+        </div>
+        {/* Additional dream job experiences */}
+        <div className="review-card">
+          <div className="review-header">
+            <span className="author">Renuka Patel</span>
+            <span className="rating">Rating: 4.9/5</span>
+          </div>
+          <p className="comment">"Being an astronaut and exploring outer space has been my dream since childhood. Every day of training brings me closer to fulfilling that dream."</p>
+        </div>
+        <div className="review-card">
+          <div className="review-header">
+            <span className="author">Suresh Verma</span>
+            <span className="rating">Rating: 4.6/5</span>
+          </div>
+          <p className="comment">"Working as a professional musician allows me to connect with people through music and share my emotions with the world. It's a dream job that brings joy to both me and my audience."</p>
+        </div>
+        <div className="review-card">
+          <div className="review-header">
+            <span className="author">Divya Singh</span>
+            <span className="rating">Rating: 4.4/5</span>
+          </div>
+          <p className="comment">"Being a successful author and writing stories that inspire and entertain readers has always been my dream. Every book published feels like a dream come true."</p>
         </div>
       </div>
     </div>

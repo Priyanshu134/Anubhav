@@ -6,12 +6,12 @@ import styles from './ProfilePage.module.css'; // Import CSS module
 const ProfilePage = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [userData, setUserData] = useState({
-    fullName: 'John Doe',
-    email: 'johndoe@example.com',
+    fullName: 'Ashit Joshi',
+    email: 'akshitjoshi.com',
     phone: '123-456-7890',
-    jobDescription: 'Software Developer',
-    dob: '1990-01-01',
-    city: 'New York',
+    jobDescription: 'Student at PEC',
+    dob: '3-11-2003',
+    city: 'Chandigarh',
     password: 'examplepassword',
     photoUrl: 'https://via.placeholder.com/150', // Placeholder image URL
   });

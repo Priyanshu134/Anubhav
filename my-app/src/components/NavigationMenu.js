@@ -12,6 +12,9 @@ const NavigationMenu = () => {
     const handleSearch = () => {
         const formattedQuery = searchQuery.trim().toLowerCase();
         switch (formattedQuery) {
+            case 'charted accountant':
+                window.location.href = '/JobcardsPageCA';
+                break;
             case 'business analyst':
                 window.location.href = '/JobcardsPageBA';
                 break;
@@ -38,7 +41,7 @@ const NavigationMenu = () => {
         <nav className="navigation-menu">
             <ul className="menu-left">
                 <li><Link to="/home">Home</Link></li>
-                <li><Link to="/jobs">Jobs</Link></li>
+                <li><Link to="/aboutus">About Us</Link></li>
             </ul>
             <div className="search-bar-container">
                 <input

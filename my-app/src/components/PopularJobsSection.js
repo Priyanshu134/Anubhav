@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PopularJobsSection.css';
 import axios from 'axios';
+import AnubhavImage from './Anubhav-2.png';
 const PopularJobsSection = () => {
     const [jobs, setJobs] = useState([]);
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -63,6 +64,9 @@ const PopularJobsSection = () => {
     return (
         <div className="popular-jobs-section" onMouseMove={handleMouseMove}>
             {/* <h2 className="centered">Popular Jobs</h2> */}
+            {/* <div className="image-container">
+                <img src={AnubhavImage} alt="Anubhav Image" className="centered-image" />
+            </div> */}
             <div className="job-list">
                 {jobs.map((job, index) => {
                     const originalPosition = originalPositions.find((pos) => pos.id === job.id);

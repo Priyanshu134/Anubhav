@@ -11,6 +11,11 @@ import JobcardsPageCC from './pages/JobcardsPageCC';
 import JobcardsPageMC from './pages/JobcardsPageMC';
 import JobcardsPageSE from './pages/JobcardsPageSE';
 import JobcardsPageSMM from './pages/JobcardsPageSMM';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsOfUsePage from './pages/TermsOfUsePage';
+import HelpSectionPage from './pages/HelpSectionPage';
+import FraudAlertPage from './pages/FraudAlertPage';
+import AboutUsPage from './pages/AboutUsPage';
 
 
 // Define your routes
@@ -28,7 +33,11 @@ const App = () => {
         <Route path='/JobcardsPageSMM' element={<JobcardsPageSMM />} />
         <Route path='/JobcardsPageMC' element={<JobcardsPageMC />} />
         <Route path='/JobcardsPageCC' element={<JobcardsPageCC />} />
-
+        <Route path='/privacypolicy' element={<PrivacyPolicyPage/>} />
+        <Route path='/termsofuse' element={<TermsOfUsePage/>} />
+        <Route path='/helpsection' element={<HelpSectionPage/>}/>
+        <Route path='/fraudalert' element={<FraudAlertPage/>}/>
+        <Route path='/aboutus' element={<AboutUsPage/>}/>
 
         {/* <PrivateRoute path="/home" element={<HomePage />} /> */}
         {/* <Route path='/home' element={<PrivateRoute/>}>
