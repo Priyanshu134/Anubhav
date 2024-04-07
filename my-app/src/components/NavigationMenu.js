@@ -12,7 +12,7 @@ const NavigationMenu = () => {
     const handleSearch = () => {
         const formattedQuery = searchQuery.trim().toLowerCase();
         switch (formattedQuery) {
-            case 'charted accountant':
+            case 'chartered accountant':
                 window.location.href = '/JobcardsPageCA';
                 break;
             case 'business analyst':
