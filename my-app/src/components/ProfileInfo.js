@@ -13,6 +13,7 @@ const ProfileInfo = ({ userData, onEditClick }) => {
         <p>Date of Birth: {userData.dob}</p>
         <p>City: {userData.city}</p>
         <button className={styles.editButton} onClick={onEditClick}>Edit Profile</button>
+        <button className={styles.editButton} >Post Request</button>
       </div>
     </div>
   );
