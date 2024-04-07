@@ -91,7 +91,7 @@ const JobcardsPage = () => {
 
     return (
         <div className="jobcards-page">
-            <h1 className="jobcards-heading">Charted Accountant Profiles</h1>
+            <h1 className="jobcards-heading">Chartered Accountant Profiles</h1>
             <div className="jobcards-container">
                 {jobProfiles.map(profile => (
                     <Jobcard
